@@ -114,6 +114,7 @@
 				onSearch: "&",
 				onReset: "&",
 				onClose: "&",
+				afterItemsNode: '=',
 				onAfterItemsClick: '='
 			},
 			link: function link(scope, iElement, iAttrs, ngModelController, transclude) {
