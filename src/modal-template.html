@@ -45,6 +45,8 @@
             </div>
         </div>
 
+        <div class="collection-repeat-after-container" ng-if="afterItemsNode" ng-include="afterItemsNode"></div>
+
         <div ng-if="notFound && options.length == 0">
             <div compile="notFound" compile-once="true" ng-click="closeModal()"></div>
         </div>

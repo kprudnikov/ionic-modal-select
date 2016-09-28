@@ -61,6 +61,7 @@ function modalSelect($ionicModal, $timeout, $filter, $parse, $templateCache ) {
 				onSearch: "&",
 				onReset: "&",
 				onClose: "&",
+        onAfterItemsClick: '='
 			},
 			link: function (scope, iElement, iAttrs, ngModelController, transclude) {
 
