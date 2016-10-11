@@ -5,18 +5,18 @@
     </ion-header-bar>
 
     <div class="bar bar-subheader item-input-inset" ng-class="::ui.subHeaderClass" ng-if="ui.hasSearch">
-      <label class="item-input-wrapper searchbar-wrapper">
+      <div class="item-input-wrapper searchbar-wrapper">
         <i class="icon ion-ios-search-strong placeholder-icon"></i>
         <input type="search" class="searchbar" placeholder="{{::ui.searchPlaceholder}}" ng-model="ui.searchValue">
         <a ng-show="ui.searchValue" ng-click="clearSearch()"><i class="icon ion-ios-close placeholder-icon"></i></a>
-      </label>
+      </div>
     </div>
 
     <ion-content class="has-header" ng-class="{'has-subheader':ui.hasSearch}">
         <div class="text-center" ng-if="!ui.shortList && !showList" style="padding-top:40px;">
             <h4 class="muted">{{::ui.loadListMessage}}</h4>
             <p>
-                <ion-spinner></ion-spinner>
+                <ion-spinner icon="crescent"></ion-spinner>
             </p>
         </div>
         <div ng-if="showList">
