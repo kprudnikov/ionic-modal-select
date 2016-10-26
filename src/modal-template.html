@@ -1,6 +1,7 @@
  <ion-modal-view class="ionic-select-modal" ng-class="::ui.modalClass">
 
     <ion-header-bar ng-class="::ui.headerFooterClass">
+      <button type="button" class="button button-stable modal-select-close-button" ng-click="closeModal()">{{ui.cancelButton}}</button>
       <h1 class="title">{{::ui.modalTitle}}</h1>
     </ion-header-bar>
 
@@ -14,7 +15,7 @@
 
     <ion-content class="has-header" ng-class="{'has-subheader':ui.hasSearch}">
         <div class="text-center" ng-if="!ui.shortList && !showList" style="padding-top:40px;">
-            <h4 class="muted">{{::ui.loadListMessage}}</h4>
+            <!-- <h4 class="muted">{{::ui.loadListMessage}}</h4> -->
             <p>
                 <ion-spinner icon="crescent"></ion-spinner>
             </p>
@@ -43,17 +44,17 @@
             </div>
         </div>
 
-        <div class="collection-repeat-after-container" ng-if="afterItemsNode" ng-include="afterItemsNode"></div>
-
         <div ng-if="notFound && options.length == 0">
             <div compile="notFound" compile-once="true" ng-click="closeModal()"></div>
         </div>
 
     </ion-content>
 
-    <ion-footer-bar ng-class="::ui.headerFooterClass">
+    <ion-footer-bar ng-class="::ui.headerFooterClass" ng-if="!afterItemsNode">
         <button type="button" class="button button-stable modal-select-close-button" ng-click="closeModal()">{{ui.cancelButton}}</button>
         <button type="button" ng-if="::!ui.hideReset" class="button button-stable" ng-click="unsetValue()">{{ui.resetButton}}</button>
+    </ion-footer-bar>
+    <ion-footer-bar ng-class="::ui.headerFooterClass" ng-if="afterItemsNode" ng-include="afterItemsNode">
     </ion-footer-bar>
 
 </ion-modal-view>
